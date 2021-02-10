@@ -3,12 +3,13 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>h</title>
+    <title>Hola</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script> -->
 </head>
 <body>
+
     <table>
         <thead>
             <tr>
@@ -17,15 +18,14 @@
                 <th>Correo</th>
             </tr>    
         </thead>
-            {% for persona in  persona%}
-            <tr>
-                <th>{{ persona.name }}</th>
-                <th>{{ persona.last_name }}</th>
-                <th>{{ persona.email }}</th>
-            </tr>
-            {% endfor %}
         <tbody>
-
+            {% for persona in  personas %}
+                <tr>
+                    <th>{{ persona.name }}</th>
+                    <th>{{ persona.last_name }}</th>
+                    <th>{{ persona.email }}</th>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 </body>

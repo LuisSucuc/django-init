@@ -7,3 +7,5 @@ def inicio(request):
     context = { 'personas' : personas}
     return render(request, 'index.html', context)
 
+def crearPersona(request):
+    return render(request, 'crear_persona.html')

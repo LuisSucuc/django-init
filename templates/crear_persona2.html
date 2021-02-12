@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block title %} PROBANDO {% endblock title %}
+
+{% block body %} 
+
+<form  method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">CREAR O EDITAR</button>
+</form>
+
+    
+{% endblock body %}

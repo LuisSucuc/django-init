@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>{% block title %} Hola {% endblock title%}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script> -->
+</head>
+<body>
+    {% block body %}
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>Opción</th>
+                </tr>    
+            </thead>
+            <tbody>
+                {% for persona in  object_list %}
+                    <tr>
+                        <th>{{ persona.name }}</th>
+                        <th>{{ persona.last_name }}</th>
+                        <th>{{ persona.email }}</th>
+                        <td><a href="{% url 'edit_persona2'   persona.id %}">Editar</a></td>
+                        <td><a href="{% url 'delete_persona2' persona.id %}">Eliminar</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endblock body %}
+</body>
+</html>

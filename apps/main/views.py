@@ -20,3 +20,21 @@ def crearPersona(request):
             form.save()
             return redirect('index')
     return render(request, 'crear_persona.html', context)
+
+def editPersona(request, id):
+    persona  = Persona.objects.get(id = id)
+    if request.method == "GET":
+        form = PersonaForm(instance = persona)
+        context = { "form" : form }
+    else:
+        form = PersonaForm(request.POST, instance=persona)
+        context = { "form" : form }
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    return render(request, 'crear_persona.html', context)
+
+def deletePersona(request,id):
+    persona = Persona.objects.get(id=id)
+    persona.delete()
+    return redirect('index')
